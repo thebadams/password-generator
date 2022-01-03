@@ -1,6 +1,6 @@
 import { Command } from 'commander';
 import Password, { PasswordConfig } from './Password';
-
+import Program from './Program'
 const program = new Command();
 
 program
@@ -47,7 +47,8 @@ program
 			const password = Password.Config(passwordConfig)
 			console.log(password.password)
 		} else {
-			console.log('PASSWORD GENERATION FAILED, NOT ALL REQUIREMENTS MET')
+			console.log('PASSWORD GENERATION FAILED, NOT ALL REQUIREMENTS MET, PROGRAM RUNNING TO GET REST OF INFORMATION')
+			Program.start()
 		}
 		
 	})

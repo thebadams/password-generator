@@ -1,6 +1,6 @@
 import inquirer, {Answers, InputQuestion} from "inquirer";
 import Password, { PasswordConfig } from "./Password";
-class Program {
+export default class Program {
 	private static QUESTIONS: string[] = ['Choose a Password Length (Between 8 and 128 Characters)',
 'Should Your Password Have Upper Case Letters? (y/n) ',
 'Should Your Password Have Lower Case Letters? (y/n) ',
@@ -30,5 +30,3 @@ class Program {
 		console.log(password.password)
 	}
 }
-
-Program.start()
