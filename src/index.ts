@@ -43,8 +43,13 @@ program
 				passwordConfig.length = parseInt(args[value])
 			}
 		}
-		const password = Password.Config(passwordConfig)
-		console.log(password.password)
+		if((passwordConfig.includesLowerCase || passwordConfig.includesUpperCase || passwordConfig.includesNumeric || passwordConfig.includesSpecial) && passwordConfig.length > 0) {
+			const password = Password.Config(passwordConfig)
+			console.log(password.password)
+		} else {
+			console.log('PASSWORD GENERATION FAILED, NOT ALL REQUIREMENTS MET')
+		}
+		
 	})
 
 program.parse(process.argv)
